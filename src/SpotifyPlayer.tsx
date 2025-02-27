@@ -2,7 +2,8 @@ import React from 'react';
 
 export function SpotifyPlayer() {
   return (
-    <iframe style="border-radius:12px" 
+    <iframe   
+    style={{ borderRadius: '12px' }}
     src="https://open.spotify.com/embed/playlist/7i1fVTRhzG4kLhAxEzNbf7?utm_source=generator&theme=0"
     width="100%"
     height="152"
