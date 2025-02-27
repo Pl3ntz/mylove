@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { SpotifyPlayer } from './SpotifyPlayer';
 import { Calendar, Heart, Clock } from 'lucide-react';
 
 interface TimeLeft {
@@ -190,12 +191,17 @@ function App() {
     const date = new Date(dateString);
     return date.toLocaleDateString('pt-BR');
   };
-
+  
   return (
     <div 
       className="min-h-screen flex items-center justify-center bg-cover bg-center relative overflow-hidden"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
+      {isCountingDown && (
+      <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50">
+      <SpotifyPlayer />
+      </div>
+      )}
       {/* Falling Hearts */}
       {showHearts && hearts.map(heart => (
         <div
