@@ -198,9 +198,11 @@ function App() {
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {isCountingDown && (
-      <div className="fixed right-4 top-1/2 -translate-y-1/2 z-50">
-      <SpotifyPlayer />
-      </div>
+      <><div className="hidden lg:block fixed right-4 top-1/2 -translate-y-1/2 z-50">
+          <SpotifyPlayer />
+        </div><div className="block lg:hidden mt-4">
+            <SpotifyPlayer />
+          </div></>
       )}
       {/* Falling Hearts */}
       {showHearts && hearts.map(heart => (
